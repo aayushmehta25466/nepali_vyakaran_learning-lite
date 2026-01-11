@@ -1,103 +1,517 @@
-# Test Cases for Lightweight Web Content
-## Nepali Vyakaran Learning Platform - Week 5 Assignment
+# Test Cases
+
+## Test Categories
+
+1. Performance & Optimization (10 tests)
+2. Functionality (5 tests)
+3. Responsive Design (3 tests)
+4. Accessibility (4 tests)
+5. Browser Compatibility (3 tests)
+6. User Experience (3 tests)
+
+## 1. Performance & Optimization
+
+### TC-PERF-001: Page Weight Verification
+
+**Objective**: Verify total page size meets lightweight goals  
+**Priority**: High
+
+**Test Steps**:
+1. Open DevTools > Network tab
+2. Load index.html
+3. Check size of each resource
+4. Sum total transferred bytes
+
+**Expected Result**:
+- Total page weight < 30KB (excluding fonts)
+- HTML: ~8KB
+- CSS: ~9KB
+- JavaScript: ~4KB
 
 ---
 
-## 📋 Test Case Overview
+### TC-PERF-002: Font Loading Optimization
 
-This document contains comprehensive test cases for the lightweight implementation of the Nepali Grammar Learning Platform. Test cases cover functionality, performance, accessibility, and lightweight optimization goals.
+**Objective**: Verify font optimization  
+**Priority**: High
 
----
-
-## 🎯 Test Case Categories
-
-1. **Performance & Lightweight Optimization**
-2. **Functionality Testing**
-3. **Responsive Design Testing**
-4. **Accessibility Testing**
-5. **Browser Compatibility Testing**
-6. **User Experience Testing**
-
----
-
-## 1️⃣ Performance & Lightweight Optimization Test Cases
-
-### Test Case 1.1: Page Weight Optimization
-
-| **Test ID** | TC-PERF-001 |
-|-------------|-------------|
-| **Test Item** | Total Page Size Verification |
-| **Purpose** | Ensure the total page weight meets lightweight goals |
-| **Priority** | High |
-
-**Key Checkpoints:**
-- [ ] HTML file size < 10KB (uncompressed)
-- [ ] CSS file size < 12KB (uncompressed)
-- [ ] JavaScript file size < 5KB (uncompressed)
-- [ ] Total page size < 30KB (excluding fonts)
-- [ ] No unnecessary whitespace in production files
-
-**Test Steps:**
-1. Open browser DevTools (F12)
-2. Navigate to Network tab
-3. Load `index.html`
-4. Check size of each resource
-5. Sum total transferred bytes
-
-**Expected Result:**
-- ✅ Total page weight < 30KB (excluding external fonts)
-- ✅ HTML: ~8KB
-- ✅ CSS: ~9KB
-- ✅ JavaScript: ~4KB
-- ✅ All files load successfully
-
-**Actual Result:** _[To be filled during testing]_
-
-**Status:** _[Pass/Fail]_
-
----
-
-### Test Case 1.2: Font Loading Optimization
-
-| **Test ID** | TC-PERF-002 |
-|-------------|-------------|
-| **Test Item** | Font Resource Optimization |
-| **Purpose** | Prevent excessive page weight and FOIT caused by fonts |
-| **Priority** | High |
-
-**Key Checkpoints:**
-- [ ] Use of modern font format (WOFF2)
-- [ ] Font files served with proper compression
-- [ ] `font-display: swap` implemented
-- [ ] Only necessary font weights loaded (400, 600, 700)
-- [ ] Preconnect hints for Google Fonts
-
-**Test Steps:**
+**Test Steps**:
 1. Open DevTools > Network tab
 2. Filter by "Font" resources
 3. Check font file formats and sizes
-4. Verify `font-display: swap` in CSS link
-5. Observe text rendering behavior
+4. Verify `display=swap` in CSS link
 
-**Expected Result:**
-- ✅ Fonts use WOFF2 format
-- ✅ Only 3 font weights loaded (not 9+)
-- ✅ `display=swap` parameter present in font URL
-- ✅ Preconnect links present in HTML `<head>`
-- ✅ Text visible immediately (no FOIT)
-- ✅ Font resources < 100KB total
-
-**Actual Result:** _[To be filled during testing]_
-
-**Status:** _[Pass/Fail]_
+**Expected Result**:
+- Fonts use WOFF2 format
+- Only 3 font weights loaded
+- `display=swap` parameter present
+- Text visible immediately (no FOIT)
 
 ---
 
-### Test Case 1.3: Image and Media Resource Optimization
+### TC-PERF-003: HTTP Request Count
 
-| **Test ID** | TC-PERF-003 |
-|-------------|-------------|
-| **Test Item** | Media Resource Efficiency |
+**Objective**: Minimize HTTP requests  
+**Priority**: High
+
+**Test Steps**:
+1. Open DevTools > Network tab
+2. Clear cache and reload
+3. Count total requests
+
+**Expected Result**:
+- Total requests ≤ 5
+- No unnecessary third-party requests
+
+---
+
+### TC-PERF-004: Load Time on 3G
+
+**Objective**: Verify load time on slow networks  
+**Priority**: Critical
+
+**Test Steps**:
+1. Open DevTools > Network tab
+2. Set throttling to "Fast 3G"
+3. Hard reload (Ctrl+Shift+R)
+4. Check load time
+
+**Expected Result**:
+- Page load < 3 seconds
+- Content visible < 2 seconds
+
+---
+
+### TC-PERF-005: JavaScript Dependencies
+
+**Objective**: Verify zero external dependencies  
+**Priority**: Critical
+
+**Test Steps**:
+1. Check Network tab for CDN requests
+2. Inspect script tags in HTML
+3. Verify no framework loading
+
+**Expected Result**:
+- No React, jQuery, or other libraries
+- Only vanilla JavaScript
+- No npm package dependencies
+
+---
+
+### TC-PERF-006: CSS Optimization
+
+**Objective**: Verify CSS efficiency  
+**Priority**: Medium
+
+**Test Steps**:
+1. Check DevTools > Coverage tab
+2. Run coverage analysis on CSS
+3. Verify no unused styles
+
+**Expected Result**:
+- CSS usage > 80%
+- No redundant properties
+- Efficient selectors
+
+---
+
+### TC-PERF-007: JavaScript Performance
+
+**Objective**: Verify script execution efficiency  
+**Priority**: Medium
+
+**Test Steps**:
+1. Open DevTools > Performance tab
+2. Record page load
+3. Check scripting time
+
+**Expected Result**:
+- Scripting time < 500ms
+- No long tasks (>50ms)
+- Efficient DOM manipulation
+
+---
+
+### TC-PERF-008: Lighthouse Audit
+
+**Objective**: Verify overall performance score  
+**Priority**: Critical
+
+**Test Steps**:
+1. Open DevTools > Lighthouse
+2. Select all categories
+3. Choose "Mobile" device
+4. Run audit
+
+**Expected Result**:
+- Performance score > 90
+- Accessibility score > 95
+- Best Practices score > 90
+
+---
+
+### TC-PERF-009: Resource Caching
+
+**Objective**: Verify proper caching  
+**Priority**: Medium
+
+**Test Steps**:
+1. Load page once
+2. Reload page
+3. Check cached resources in Network tab
+
+**Expected Result**:
+- Static resources cached
+- Reduced load time on repeat visits
+
+---
+
+### TC-PERF-010: Asset Optimization
+
+**Objective**: Verify unicode emojis used instead of images  
+**Priority**: Medium
+
+**Test Steps**:
+1. Inspect icons in page
+2. Verify no image downloads for icons
+3. Check Network tab for image requests
+
+**Expected Result**:
+- No icon image files
+- Unicode emojis render correctly
+- Faster initial load
+
+---
+
+## 2. Functionality
+
+### TC-FUNC-001: Navigation Links
+
+**Objective**: Verify navigation functionality  
+**Priority**: High
+
+**Test Steps**:
+1. Click each navigation link
+2. Verify smooth scroll
+3. Check active state changes
+
+**Expected Result**:
+- All links work correctly
+- Smooth scroll to sections
+- Active state updates
+
+---
+
+### TC-FUNC-002: Activity Buttons
+
+**Objective**: Test activity card interactions  
+**Priority**: High
+
+**Test Steps**:
+1. Click each activity button
+2. Verify button animation
+3. Check notification display
+
+**Expected Result**:
+- Button responds with animation
+- Notification appears
+- Correct notification message
+
+---
+
+### TC-FUNC-003: Language Switcher
+
+**Objective**: Test bilingual functionality  
+**Priority**: High
+
+**Test Steps**:
+1. Click language switcher button
+2. Verify all text changes
+3. Check font switching
+4. Toggle back to original language
+
+**Expected Result**:
+- Language toggles between English/Nepali
+- All text elements update
+- Font changes to Noto Sans Devanagari for Nepali
+- Button label updates correctly
+
+---
+
+### TC-FUNC-004: Progress Bar
+
+**Objective**: Test progress animation  
+**Priority**: Medium
+
+**Test Steps**:
+1. Click challenge button
+2. Observe progress bar animation
+3. Verify progress percentage updates
+
+**Expected Result**:
+- Progress animates smoothly
+- Percentage text updates
+- Animation completes correctly
+
+---
+
+### TC-FUNC-005: Scroll Animations
+
+**Objective**: Test scroll-triggered animations  
+**Priority**: Low
+
+**Test Steps**:
+1. Scroll down page
+2. Observe card animations
+3. Verify Intersection Observer works
+
+**Expected Result**:
+- Cards fade in when visible
+- Animations trigger once
+- No animation on scrolled elements
+
+---
+
+## 3. Responsive Design
+
+### TC-RESP-001: Mobile View (< 768px)
+
+**Objective**: Verify mobile layout  
+**Priority**: High
+
+**Test Steps**:
+1. Resize browser to 375px width
+2. Check layout and navigation
+3. Test all interactions
+
+**Expected Result**:
+- Single column layout
+- Navigation hidden or hamburger menu
+- All features functional
+- Touch-friendly buttons
+
+---
+
+### TC-RESP-002: Tablet View (768px - 1024px)
+
+**Objective**: Verify tablet layout  
+**Priority**: Medium
+
+**Test Steps**:
+1. Resize to 768px width
+2. Check grid layouts
+3. Test navigation
+
+**Expected Result**:
+- Two-column grid
+- Full navigation visible
+- Proper spacing maintained
+
+---
+
+### TC-RESP-003: Desktop View (> 1024px)
+
+**Objective**: Verify desktop layout  
+**Priority**: High
+
+**Test Steps**:
+1. View on desktop resolution (1920px)
+2. Check max-width constraint
+3. Verify grid layouts
+
+**Expected Result**:
+- Content centered with max-width
+- Multi-column grids (3-4 columns)
+- All features accessible
+
+---
+
+## 4. Accessibility
+
+### TC-ACCESS-001: Keyboard Navigation
+
+**Objective**: Verify keyboard accessibility  
+**Priority**: Critical
+
+**Test Steps**:
+1. Use Tab key to navigate
+2. Use Enter to activate buttons
+3. Check focus indicators
+
+**Expected Result**:
+- All interactive elements focusable
+- Visible focus indicators
+- Logical tab order
+
+---
+
+### TC-ACCESS-002: Screen Reader Compatibility
+
+**Objective**: Test with screen reader  
+**Priority**: High
+
+**Test Steps**:
+1. Enable screen reader (NVDA/JAWS)
+2. Navigate through page
+3. Verify content announced correctly
+
+**Expected Result**:
+- Semantic HTML read correctly
+- ARIA labels present
+- Logical content flow
+
+---
+
+### TC-ACCESS-003: Color Contrast
+
+**Objective**: Verify WCAG AA compliance  
+**Priority**: High
+
+**Test Steps**:
+1. Use browser contrast checker
+2. Test all text/background combinations
+3. Check button states
+
+**Expected Result**:
+- Contrast ratio ≥ 4.5:1 for normal text
+- Contrast ratio ≥ 3:1 for large text
+- All states meet WCAG AA
+
+---
+
+### TC-ACCESS-004: Reduced Motion
+
+**Objective**: Verify prefers-reduced-motion support  
+**Priority**: Medium
+
+**Test Steps**:
+1. Enable reduced motion in OS settings
+2. Reload page
+3. Verify animations disabled
+
+**Expected Result**:
+- No animations play
+- All functionality intact
+- Smooth user experience
+
+---
+
+## 5. Browser Compatibility
+
+### TC-BROWSER-001: Cross-Browser Testing
+
+**Objective**: Test on multiple browsers  
+**Priority**: Critical
+
+**Test Steps**:
+1. Test on Chrome 90+
+2. Test on Firefox 88+
+3. Test on Safari 14+
+4. Test on Edge 90+
+
+**Expected Result**:
+- Consistent appearance across browsers
+- All features functional
+- No console errors
+
+---
+
+### TC-BROWSER-002: Mobile Browsers
+
+**Objective**: Test on mobile browsers  
+**Priority**: High
+
+**Test Steps**:
+1. Test on iOS Safari
+2. Test on Chrome Mobile
+3. Test touch interactions
+
+**Expected Result**:
+- Responsive layout works
+- Touch interactions smooth
+- No mobile-specific bugs
+
+---
+
+### TC-BROWSER-003: Legacy Browser Graceful Degradation
+
+**Objective**: Verify fallbacks for older browsers  
+**Priority**: Low
+
+**Test Steps**:
+1. Test on older browser versions
+2. Check basic functionality
+3. Verify content accessible
+
+**Expected Result**:
+- Basic content accessible
+- Core features work
+- Graceful degradation
+
+---
+
+## 6. User Experience
+
+### TC-UX-001: First Impression
+
+**Objective**: Evaluate initial page load experience  
+**Priority**: Critical
+
+**Test Steps**:
+1. Clear cache
+2. Load page
+3. Observe loading sequence
+
+**Expected Result**:
+- Content visible quickly
+- No layout shifts
+- Smooth initial render
+
+---
+
+### TC-UX-002: Interaction Feedback
+
+**Objective**: Verify visual feedback  
+**Priority**: High
+
+**Test Steps**:
+1. Hover over interactive elements
+2. Click buttons
+3. Observe animations
+
+**Expected Result**:
+- Hover states clear
+- Click feedback immediate
+- Animations smooth
+
+---
+
+### TC-UX-003: Error Handling
+
+**Objective**: Test error scenarios  
+**Priority**: Medium
+
+**Test Steps**:
+1. Disable JavaScript
+2. Slow network simulation
+3. Check console for errors
+
+**Expected Result**:
+- Graceful degradation without JS
+- No console errors
+- Appropriate fallbacks
+
+---
+
+## Test Summary Template
+
+| Test ID | Category | Status | Notes |
+|---------|----------|--------|-------|
+| TC-PERF-001 | Performance | - | |
+| TC-PERF-002 | Performance | - | |
+| TC-FUNC-001 | Functionality | - | |
+| ... | ... | ... | |
 | **Purpose** | Minimize performance impact of images and media elements |
 | **Priority** | High |
 
