@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Week 5 Assignment - Lightweight Web Content for Interactive Learning Platform">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Optimized Font Loading with display=swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Interactive Learning Platform - Week 5 Lightweight Assignment</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon" aria-label="Learning Platform logo">LP</div>
+                <span class="logo-text" data-en="Learning Platform" data-ne="नेपाली व्याकरण सिकाइ">Learning Platform</span>
+            </a>
+            
+            <nav class="navigation" role="navigation">
+                <a href="#home" class="nav-link active" data-en="Home" data-ne="गृहपृष्ठ">Home</a>
+                <a href="#lessons" class="nav-link" data-en="Lessons" data-ne="पाठहरू">Lessons</a>
+                <a href="#games" class="nav-link" data-en="Games" data-ne="खेलहरू">Games</a>
+                <a href="#progress" class="nav-link" data-en="Progress" data-ne="प्रगति">Progress</a>
+            </nav>
+            
+            <button class="language-switcher" id="langSwitch" aria-label="Switch language">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text">नेपाली</span>
+            </button>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-value">125</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🪙</span>
+                    <span class="stat-value">450</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1 class="welcome-title" data-en="Welcome, Student! 🎉" data-ne="स्वागत छ, विद्यार्थी! 🎉">Welcome, Student! 🎉</h1>
+            <p class="welcome-subtitle" data-en="Get Ready to Learn with Our Interactive Platform" data-ne="नेपाली व्याकरण सिक्न तयार हुनुहोस्">Get Ready to Learn with Our Interactive Platform</p>
+        </section>
+
+        <!-- Quick Stats Grid -->
+        <section class="stats-grid" aria-label="Learning statistics">
+            <div class="stat-card">
+                <div class="stat-icon-container" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                    <span class="stat-icon-large">📚</span>
+                </div>
+                <div class="stat-value-large">12</div>
+                <div class="stat-label" data-en="Completed Lessons" data-ne="पूरा भएका पाठ">Completed Lessons</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon-container" style="background: linear-gradient(45deg, #ff6b6b, #ffa726);">
+                    <span class="stat-icon-large">🎮</span>
+                </div>
+                <div class="stat-value-large">8</div>
+                <div class="stat-label" data-en="Games Played" data-ne="खेलेका खेल">Games Played</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon-container" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">
+                    <span class="stat-icon-large">✏️</span>
+                </div>
+                <div class="stat-value-large">25</div>
+                <div class="stat-label" data-en="Writing Exercises" data-ne="लेखन अभ्यास">Writing Exercises</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon-container" style="background: linear-gradient(45deg, #56ab2f, #a8e6cf);">
+                    <span class="stat-icon-large">🏆</span>
+                </div>
+                <div class="stat-value-large">5</div>
+                <div class="stat-label" data-en="Achievements" data-ne="उपलब्धि">Achievements</div>
+            </div>
+        </section>
+
+        <!-- Activity Cards -->
+        <section class="activity-grid">
+            <article class="activity-card">
+                <div class="activity-icon" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                    📚
+                </div>
+                <h3 class="activity-title" data-en="Learn Lessons" data-ne="पाठ सिक्नुहोस्">Learn Lessons</h3>
+                <p class="activity-description" data-en="Explore various interactive lessons designed for effective learning" data-ne="नेपाली व्याकरणका विभिन्न पाठहरू सजिलै सिक्नुहोस्">Explore various interactive lessons designed for effective learning</p>
+                <button class="activity-button" data-en="Start Learning" data-ne="सुरु गर्नुहोस्">Start Learning</button>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon" style="background: linear-gradient(45deg, #ff6b6b, #ffa726);">
+                    🎮
+                </div>
+                <h3 class="activity-title" data-en="Play Games" data-ne="खेल खेल्नुहोस्">Play Games</h3>
+                <p class="activity-description" data-en="Learn through fun and engaging educational games" data-ne="रमाइलो खेलहरू मार्फत व्याकरण सिक्नुहोस्">Learn through fun and engaging educational games</p>
+                <button class="activity-button" data-en="Play Now" data-ne="खेल्नुहोस्">Play Now</button>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon" style="background: linear-gradient(45deg, #4ecdc4, #44a08d);">
+                    ✏️
+                </div>
+                <h3 class="activity-title" data-en="Practice Writing" data-ne="लेखन अभ्यास">Practice Writing</h3>
+                <p class="activity-description" data-en="Improve your skills with interactive writing exercises" data-ne="नेपाली लिपिमा लेख्न सिक्नुहोस्">Improve your skills with interactive writing exercises</p>
+                <button class="activity-button" data-en="Start Practice" data-ne="अभ्यास गर्नुहोस्">Start Practice</button>
+            </article>
+
+            <article class="activity-card">
+                <div class="activity-icon" style="background: linear-gradient(45deg, #56ab2f, #a8e6cf);">
+                    📊
+                </div>
+                <h3 class="activity-title" data-en="View Progress" data-ne="प्रगति हेर्नुहोस्">View Progress</h3>
+                <p class="activity-description" data-en="Track your learning journey and achievements" data-ne="आफ्नो सिकाइको प्रगति जाँच गर्नुहोस्">Track your learning journey and achievements</p>
+                <button class="activity-button" data-en="View Stats" data-ne="हेर्नुहोस्">View Stats</button>
+            </article>
+        </section>
+
+        <!-- Achievement Section -->
+        <section class="achievement-section">
+            <h2 class="section-title" data-en="Recent Achievements" data-ne="हालसालै प्राप्त उपलब्धिहरू">Recent Achievements</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <div class="achievement-badge">🌟</div>
+                    <h4 class="achievement-name" data-en="Master Learner" data-ne="व्याकरण गुरु">Master Learner</h4>
+                    <p class="achievement-desc" data-en="Completed 10 lessons" data-ne="१० पाठ पूरा गर्नुभयो">Completed 10 lessons</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">🎯</div>
+                    <h4 class="achievement-name" data-en="Game Champion" data-ne="खेल च्याम्पियन">Game Champion</h4>
+                    <p class="achievement-desc" data-en="Won 5 games" data-ne="५ खेल जित्नुभयो">Won 5 games</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-badge">✍️</div>
+                    <h4 class="achievement-name" data-en="Writing Expert" data-ne="लेखन विशेषज्ञ">Writing Expert</h4>
+                    <p class="achievement-desc" data-en="Completed 20 writing exercises" data-ne="२० लेखन अभ्यास पूरा">Completed 20 writing exercises</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Challenge -->
+        <section class="daily-challenge">
+            <div class="challenge-content">
+                <h2 class="challenge-title" data-en="Today's Challenge 🎯" data-ne="आजको चुनौती 🎯">Today's Challenge 🎯</h2>
+                <p class="challenge-description" data-en="Complete today's learning challenge and earn 50 coins!" data-ne="आजको व्याकरण प्रश्न समाधान गर्नुहोस् र 50 सिक्का जित्नुहोस्!">Complete today's learning challenge and earn 50 coins!</p>
+                <div class="challenge-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span class="progress-text" data-en="60% Complete" data-ne="60% पूरा भयो">60% Complete</span>
+                </div>
+                <button class="challenge-button" data-en="Accept Challenge" data-ne="चुनौती स्वीकार गर्नुहोस्">Accept Challenge</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text" data-en="&copy; 2026 Interactive Learning Platform - Week 5 Assignment | All Rights Reserved" data-ne="&copy; 2026 नेपाली व्याकरण सिकाइ - Class 4 | सबै अधिकार सुरक्षित">&copy; 2026 Interactive Learning Platform - Week 5 Assignment | All Rights Reserved</p>
+    </footer>
+
+    <!-- Minimal JavaScript for interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>
